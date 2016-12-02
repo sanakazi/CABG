@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3">
+
+
+    <LinearLayout
+
+        android:id="@+id/l1"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Operative Mortality"
+            android:textColor="@color/blue_edward"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="4">
+
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="CABG"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/green_a200"/>
+
+                <TextView
+                    android:id="@+id/op_cabg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/green_a200"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"/>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="CABG + AVR"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/op_cabgavr_cur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"
+                android:layout_margin="5dp"/>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="AVR post prior CABG"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/op_cabgavr_fut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/l2"
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Permanent Stroke"
+            android:textColor="@color/blue_edward"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="4">
+
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="CABG"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/green_a200"/>
+
+                <TextView
+                    android:id="@+id/ps_cabg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/green_a200"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"/>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="CABG + AVR"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/ps_cabgavr_cur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"
+                android:layout_margin="5dp"/>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="AVR post prior CABG"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/ps_cabgavr_fut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+
+
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Renal Failure Complication"
+            android:textColor="@color/blue_edward"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="4">
+
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="CABG"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/green_a200"/>
+
+                <TextView
+                    android:id="@+id/rfc_cabg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/green_a200"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"/>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="CABG + AVR"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/rfc_cabgavr_cur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"
+                android:layout_margin="5dp"/>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="AVR post prior CABG"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/rfc_cabgavr_fut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

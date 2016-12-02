@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg">
+
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_corners_white">
+
+            <LinearLayout
+                android:layout_weight="0.1"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:id="@+id/header"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_corners_grey">
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dave Davidson"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_weight="0.8"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                >
+
+
+                <include layout="@layout/fragment_patient_info1_content"/>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="@color/blue_edward"
+            android:text="Next"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+
+
+

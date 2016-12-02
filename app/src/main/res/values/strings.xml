@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CABG</string>
+
+    <!--  Navigation drawer menu-->
+    <string name="risk_assessment">Risk Assessment</string>
+    <string name="about">About</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="drawer_open">Navigation drawer opened</string>
+    <string name="drawer_close">Navigation drawer closed</string>
+    <string name="menu">Menu</string>
+
+    <!-- Patient Info Screen 1-->
+    <string name="age">Patient`s Age</string>
+    <string name="blood_pressure">Blood Pressure</string>
+    <string name="nyha_class">NYHA Class</string>
+
+
+    <!-- Patient Info Screen 2-->
+    <string name="gradient">Gradient</string>
+    <string name="valve_area">Valve area</string>
+    <string name="jet_velocity">Jet Velocity</string>
+    <string name="gradient_unit">mmHG</string>
+    <string name="valve_area_unit">cm2</string>
+    <string name="jet_velocity_unit">m/sec</string>
+
+
+</resources>
+
