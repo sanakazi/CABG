@@ -1,27 +1,44 @@
 <resources>
-    <string name="app_name">CABG</string>
+    <string name="app_name">CABG+AVR</string>
+    <string name="summary1_activity">Summary</string>
+    <string name="days_added_activity">No. of Days Added</string>
+    <string name="patient_info">Patient Info</string>
 
     <!--  Navigation drawer menu-->
-    <string name="risk_assessment">Risk Assessment</string>
-    <string name="about">About</string>
+    <string name="risk_assessment">Begin Risk Assessment</string>
+    <string name="about">About Edwards</string>
     <string name="disclaimer">Disclaimer</string>
     <string name="drawer_open">Navigation drawer opened</string>
     <string name="drawer_close">Navigation drawer closed</string>
     <string name="menu">Menu</string>
 
     <!-- Patient Info Screen 1-->
-    <string name="age">Patient`s Age</string>
     <string name="blood_pressure">Blood Pressure</string>
     <string name="nyha_class">NYHA Class</string>
 
 
     <!-- Patient Info Screen 2-->
     <string name="gradient">Gradient</string>
-    <string name="valve_area">Valve area</string>
+    <string name="valve_area">Valve Area</string>
     <string name="jet_velocity">Jet Velocity</string>
-    <string name="gradient_unit">mmHG</string>
+    <string name="gradient_unit">mmHg</string>
     <string name="valve_area_unit">cm2</string>
     <string name="jet_velocity_unit">m/sec</string>
+
+
+    <string name="demo_min_label"></string>
+    <string name="demo_max_label" />
+
+    <string name="what_we_do">Edwards Lifesciences is the global leader in patient-focused medical innovations for structural heart disease, as well as critical care and surgical monitoring. Driven by a passion to help patients, the company collaborates with the world’s leading clinicians and researchers to address unmet healthcare needs, working to improve patient outcomes and enhance lives.
+<b>Heart Valve Technologies</b>
+Dedicated to improving the lives of patients with structural heart disease, our commitment to transformational heart valve technology began in 1960 with the first commercially available heart valve. Edwards has continued to meaningfully advance heart valve therapy, and, more than 50 years later, we remain a global leader in this field. Our offerings include tissue replacement heart valves and repair products, as well as transcatheter heart valves for those patients considered at high or greater risk for conventional valve replacement.
+The Edwards\' proven family of PERIMOUNT surgical valves are the world\'s most frequently implanted valves. Decades of clinical experience and peer-reviewed data on Edwards\' valves provide robust evidence of long-term durability and proven hemodynamics of the PERIMOUNT valve platform.
+Edwards’ leadership in transcatheter heart valve replacement includes a commitment to meaningful innovation, rigorous scientific study, extensive clinician training and education, and significant investment in new applications of the technology. The Edwards SAPIEN valve platform continues to raise the bar as the most widely studied transcatheter heart valve worldwide.
+Edwards also offers market-leading technologies that facilitate on-pump cardiac surgery procedures through smaller incisions. Edwards’ minimally invasive valve surgery solutions are comprised of soft tissue retractors, venous and arterial cannulae, aortic occlusion, venting, and coronary sinus catheters.
+Critical Care Technologies
+Edwards has been advancing the care of the acutely ill for more than 40 years. Starting with the development of Swan-Ganz advanced hemodynamic monitoring devices for measuring cardiovascular performance in high-risk surgical and critically ill patients, Edwards continues to evolve to less-invasive and noninvasive devices to provide valuable hemodynamic insight for an expanded patient population. Edwards has continued to advance hemodynamic monitoring platforms to enable proactive clinical decisions for surgical, anesthesia and critical care clinicians. Edwards is focused on helping clinicians enhance knowledge and standardize practice to improve the quality and efficiency of care. Edwards provides evidence-based programs such as Enhanced Surgical Recovery Program that support the implementation and compliance to protocolized care pathways in the OR and ICU.
+Our vascular therapies products, including genuine Fogarty catheters, continue this high standard. Developed and refined in close collaboration with surgeons and interventionalists for over 50 years, Fogarty catheters have been used in millions of procedures worldwide.
+</string>
 
 
 </resources>

@@ -50,6 +50,7 @@ public class PatientSeverityActivity extends AppCompatActivity {
    private int diff;
     private static double new_grad,new_av,new_jv;
     static int  chosen_age;
+    static int  show_age_msg=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +63,11 @@ public class PatientSeverityActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         ACT_AGE = intent.getIntExtra("age",0);
+        Log.w(TAG,ACT_AGE + " is current age");
         ACT_GRAD= intent.getDoubleExtra("gradient",0);
         ACT_AV= intent.getDoubleExtra("valve_area",0);
         ACT_JV= intent.getDoubleExtra("jet_velocity",0);
-        barColor(ACT_GRAD,ACT_AV,ACT_JV);
+        barColorNew(ACT_GRAD,ACT_AV,ACT_JV);
         events();
         wheelevents();
 
@@ -114,11 +116,20 @@ public class PatientSeverityActivity extends AppCompatActivity {
                 //get the item at this position
                 Map.Entry<String, Integer> selectedEntry = ((MaterialColorAdapter) parent.getAdapter()).getItem(position);
                 parent.setSelectionColor(getContrastColor(selectedEntry));
-                if(position<ACT_AGE)
+                if(position<=ACT_AGE)
                 {
+                    if(show_age_msg==0) {
 
+                        show_age_msg=1;
+                        wheelView.setWheelDrawableRotatable(false);
+                        Toast.makeText(PatientSeverityActivity.this, "Please select future age", Toast.LENGTH_SHORT).show();
+
+                    }
+                    wheelView.setSelected(ACT_AGE);
                 }
                 else{
+                    wheelView.setWheelDrawableRotatable(true);
+                    show_age_msg=0;
                     chosen_age=position;
                     severityCalculation(position);
                 }
@@ -129,7 +140,7 @@ public class PatientSeverityActivity extends AppCompatActivity {
             @Override
             public void onWheelItemClick(WheelView parent, int position, boolean isSelected) {
                 String msg = String.valueOf(position) + " " + isSelected;
-                Toast.makeText(PatientSeverityActivity.this, msg, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(PatientSeverityActivity.this, msg, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -184,23 +195,30 @@ public class PatientSeverityActivity extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PatientSeverityActivity.this, Summary1Activity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                intent.putExtra("age",ACT_AGE);
-                intent.putExtra("chosen_age",chosen_age);
 
-                intent.putExtra("gradient" ,ACT_GRAD);
-                intent.putExtra("valve_area" ,ACT_AV);
-                intent.putExtra("jet_velocity" ,ACT_JV);
+                if(chosen_age<=ACT_AGE)
+                {
+                    Toast.makeText(PatientSeverityActivity.this, "Please select future age", Toast.LENGTH_SHORT).show();
+                }
+                else {
 
-                intent.putExtra("new_gradient" ,new_grad);
-                intent.putExtra("new_valve_area" ,new_av);
-                intent.putExtra("new_jet_velocity" ,new_jv);
+                    Intent intent = new Intent(PatientSeverityActivity.this, Summary1Activity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    intent.putExtra("age", ACT_AGE);
+                    intent.putExtra("chosen_age", chosen_age);
+
+                    intent.putExtra("gradient", ACT_GRAD);
+                    intent.putExtra("valve_area", ACT_AV);
+                    intent.putExtra("jet_velocity", ACT_JV);
+
+                    intent.putExtra("new_gradient", new_grad);
+                    intent.putExtra("new_valve_area", new_av);
+                    intent.putExtra("new_jet_velocity", new_jv);
 
 
-
-                startActivity(intent);
-                Log.w(TAG,"Gradient is " + ACT_GRAD);
+                    startActivity(intent);
+                    Log.w(TAG, "Gradient is " + ACT_GRAD);
+                }
             }
         });
     }
@@ -276,6 +294,62 @@ public class PatientSeverityActivity extends AppCompatActivity {
         //endregion
     }
 
+
+    private void barColorNew(double bar1 ,double bar2 , double bar3)
+    {
+        //region for bar1
+        if(bar1<25) {
+            l1.setBackgroundColor(getResources().getColor(R.color.mild)); class1.setTextColor(getResources().getColor(R.color.mild));class1.setText("Mild");
+        }
+        else if(bar1 >=25&&bar1<40)
+        {
+            l1.setBackgroundColor(getResources().getColor(R.color.moderate)); class1.setTextColor(getResources().getColor(R.color.moderate));class1.setText("Moderate");
+        }
+        else if(bar1>=40&&bar1<=60)
+        {
+            l1.setBackgroundColor(getResources().getColor(R.color.severe)); class1.setTextColor(getResources().getColor(R.color.severe));class1.setText("Severe");
+        }
+        else if(bar1>60)
+        {
+            l1.setBackgroundColor(getResources().getColor(R.color.very_severe)); class1.setTextColor(getResources().getColor(R.color.very_severe));class1.setText("Very Severe");
+        }
+
+//endregion
+        //region for bar2
+        if(bar2>1.5) {
+            l2.setBackgroundColor(getResources().getColor(R.color.mild)); class2.setTextColor(getResources().getColor(R.color.mild));class2.setText("Mild");
+        }
+        else if(bar2<=1.5 && bar2>=1)
+        {
+            l2.setBackgroundColor(getResources().getColor(R.color.moderate)); class2.setTextColor(getResources().getColor(R.color.moderate));class2.setText("Moderate");
+        }
+        else if(bar2<=1 &&bar1 >=-0.8)
+        {
+            l2.setBackgroundColor(getResources().getColor(R.color.severe)); class2.setTextColor(getResources().getColor(R.color.severe));class2.setText("Severe");
+        }
+        else if(bar2<-0.8)
+        {
+            l2.setBackgroundColor(getResources().getColor(R.color.very_severe)); class2.setTextColor(getResources().getColor(R.color.very_severe));class2.setText("Very Severe");
+        }
+        //endregion
+        //region for bar3
+        if(bar3<2.5) {
+            l3.setBackgroundColor(getResources().getColor(R.color.mild)); class3.setTextColor(getResources().getColor(R.color.mild));class3.setText("Mild");
+        }
+        else if(bar3<=4 && bar3>=2.5)
+        {
+            l3.setBackgroundColor(getResources().getColor(R.color.moderate)); class3.setTextColor(getResources().getColor(R.color.moderate));class3.setText("Moderate");
+        }
+        else if(bar3<=-5 &&bar3 >= -4)
+        {
+            l3.setBackgroundColor(getResources().getColor(R.color.severe)); class3.setTextColor(getResources().getColor(R.color.severe));class3.setText("Severe");
+        }
+        else if(bar3>-5)
+        {
+            l3.setBackgroundColor(getResources().getColor(R.color.very_severe)); class3.setTextColor(getResources().getColor(R.color.very_severe));class3.setText("Very Severe");
+        }
+        //endregion
+    }
 
     }
 

@@ -35,7 +35,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:background="@color/white"
-        android:alpha="0.9"
+        android:alpha="0.97"
         android:layout_alignParentRight="true"
         android:layout_width="150dp"
         android:layout_height="match_parent"
@@ -96,10 +96,16 @@
                         android:layout_width="match_parent"
                         android:gravity="center"
                         android:textColor="@color/black"
-                        android:text="Gradient mmHG"
+                        android:text="Gradient mmHg"
                         android:textSize="15sp"/>
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/app_grey"
+                    android:layout_alignParentBottom="true"/>
 
             </RelativeLayout>
 
@@ -158,11 +164,17 @@
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:gravity="center"
-                        android:text="Aortic Valve Area cm2"
+                        android:text="Aortic Valve Area cm²"
                         android:textColor="@color/black"
                         android:textSize="15sp"/>
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/app_grey"
+                    android:layout_alignParentBottom="true"/>
 
             </RelativeLayout>
 

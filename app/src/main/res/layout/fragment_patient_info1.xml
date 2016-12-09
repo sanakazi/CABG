@@ -29,11 +29,14 @@
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_corners_grey">
 
-                <TextView
+                <EditText
+                    android:id="@+id/et_name"
+                    android:singleLine="true"
+                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dave Davidson"
+                    android:layout_height="match_parent"
+                    android:hint="Enter Patient's Name"
                     android:textColor="@color/black"
                     android:layout_gravity="center"
                     android:textStyle="bold"
@@ -45,6 +48,7 @@
 
 
             <LinearLayout
+                android:id="@+id/main_layout"
                 android:layout_weight="0.8"
                 android:layout_height="0dp"
                 android:orientation="vertical"
@@ -78,7 +82,7 @@
             android:text="Next"
             android:layout_alignParentBottom="true"
             android:textColor="@color/white"
-
+            android:textAllCaps="false"
             android:textSize="15sp"
             />
     </LinearLayout>

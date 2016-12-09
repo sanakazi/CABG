@@ -1719,13 +1719,14 @@ containing a value of this type.
         public static int abc_textfield_search_activated_mtrl_alpha=0x7f020042;
         public static int abc_textfield_search_default_mtrl_alpha=0x7f020043;
         public static int abc_textfield_search_material=0x7f020044;
-        public static int ic_launcher=0x7f020045;
-        public static int notification_template_icon_bg=0x7f02004b;
-        public static int scrubber_control_disabled_holo=0x7f020046;
-        public static int scrubber_control_focused_holo=0x7f020047;
-        public static int scrubber_control_normal_holo=0x7f020048;
-        public static int scrubber_control_pressed_holo=0x7f020049;
-        public static int seek_arc_control_selector=0x7f02004a;
+        public static int circle=0x7f020045;
+        public static int ic_launcher=0x7f020046;
+        public static int notification_template_icon_bg=0x7f02004c;
+        public static int scrubber_control_disabled_holo=0x7f020047;
+        public static int scrubber_control_focused_holo=0x7f020048;
+        public static int scrubber_control_normal_holo=0x7f020049;
+        public static int scrubber_control_pressed_holo=0x7f02004a;
+        public static int seek_arc_control_selector=0x7f02004b;
     }
     public static final class id {
         public static int action0=0x7f0b0050;

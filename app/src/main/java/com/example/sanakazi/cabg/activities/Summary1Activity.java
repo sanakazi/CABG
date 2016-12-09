@@ -55,6 +55,7 @@ public class Summary1Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         current_age=intent.getIntExtra("age",0);
+
         chosen_age=intent.getIntExtra("chosen_age",0);
 
         gradient = intent.getDoubleExtra("gradient",0);
@@ -117,14 +118,14 @@ public class Summary1Activity extends AppCompatActivity {
         obj_myDb = myDb.getCurrentValues(String.valueOf(current_age));
         Log.w(TAG,obj_myDb.getCurrent_OM_CABG() + " , " + obj_myDb.getCurrent_OM_CABGAVR()) ;
 
-        op_cabg.setText(String.valueOf(obj_myDb.getCurrent_OM_CABG()));
-        op_cabgavr_cur.setText(String.valueOf(obj_myDb.getCurrent_OM_CABGAVR()));
+        op_cabg.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getCurrent_OM_CABG()))));
+        op_cabgavr_cur.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getCurrent_OM_CABGAVR()))));
 
-        ps_cabg.setText(String.valueOf(obj_myDb.getCurrent_PS_CABG()));
-        ps_cabgavr_cur.setText(String.valueOf(obj_myDb.getCurrent_PS_CABGAVR()));
+        ps_cabg.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getCurrent_PS_CABG()))));
+        ps_cabgavr_cur.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getCurrent_PS_CABGAVR()))));
 
-        rfc_cabg.setText(String.valueOf(obj_myDb.getCurrent_RF_CABG()));
-        rfc_cabgavr_cur.setText(String.valueOf(obj_myDb.getCurrent_RF_CABGAVR()));
+        rfc_cabg.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getCurrent_RF_CABG()))));
+        rfc_cabgavr_cur.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getCurrent_RF_CABGAVR()))));
 
     }
 
@@ -133,9 +134,9 @@ public class Summary1Activity extends AppCompatActivity {
         obj_myDb = myDb.getFutureValues(String.valueOf(chosen_age));
         Log.w(TAG,obj_myDb.getFuture_OM_CABGAVR() ) ;
 
-        op_cabgavr_fut.setText(String.valueOf(obj_myDb.getFuture_OM_CABGAVR()));
-        ps_cabgavr_fut.setText(String.valueOf(obj_myDb.getFuture_PS_CABGAVR()));
-        rfc_cabgavr_fut.setText(String.valueOf(obj_myDb.getFuture_RF_CABGAVR()));
+        op_cabgavr_fut.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getFuture_OM_CABGAVR()))));
+        ps_cabgavr_fut.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getFuture_PS_CABGAVR()))));
+        rfc_cabgavr_fut.setText(String.valueOf(String.format("%.2f",Double.parseDouble(obj_myDb.getFuture_RF_CABGAVR()))));
 
     }
 

@@ -30,6 +30,7 @@
                 android:background="@drawable/rounded_corners_grey">
 
                 <TextView
+                    android:id="@+id/txt_name"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -78,7 +79,7 @@
             android:text="Submit"
             android:layout_alignParentBottom="true"
             android:textColor="@color/white"
-
+            android:textAllCaps="false"
             android:textSize="15sp"
             />
     </LinearLayout>

@@ -1,124 +1,120 @@
 package com.example.sanakazi.cabg.activities;
 
-import android.support.design.widget.NavigationView;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.sanakazi.cabg.R;
-import com.example.sanakazi.cabg.fragments.Fragment2;
+import com.example.sanakazi.cabg.adapters.DrawerAdapter;
+import com.example.sanakazi.cabg.fragments.AboutusFragment;
+import com.example.sanakazi.cabg.fragments.DisclaimerFragment;
 import com.example.sanakazi.cabg.fragments.PatientInfo1Fragment;
+import com.example.sanakazi.cabg.fragments.TermsConditionsFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DrawerAdapter.FragmentListener {
     View navHeaderLayout;
     private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private NavigationView navigationView;
+    public static ActionBarDrawerToggle mDrawerToggle;
+    private RecyclerView  mRecyclerView;
+    RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
+    RecyclerView.LayoutManager mLayoutManager;
     Toolbar toolbar;
-    private static final String TAG=  MainActivity.class.getSimpleName();
-
+    String [] TITLES = {"Begin Risk Assessment" , "About Edwards"," Disclaimer"};
     CharSequence mTitle;
     PatientInfo1Fragment patientInfo1Fragment;
-    Fragment2 fragment2;
     private static final String PATIENT_INFO1_FRAGMENT= "PATIENT_INFO1_FRAGMENT";
-    private static final String FRAGMENT2= "FRAGMENT2";
+
+    private static final String TAG=  MainActivity.class.getSimpleName();
+    public static final String TERMS_AND_CONDITION= "TERMS_AND_CONDITION";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTitle = getTitle();
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        mNavigationListview=(ListView)findViewById(R.id.left_drawer);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setToolBarTitle(getString(R.string.app_name));
+    /* Assinging the toolbar object ot the view
+    and setting the the Action bar to our toolbar
+     */
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+        Intent intent= getIntent();
+        int which_fragment_to_open= intent.getIntExtra(TERMS_AND_CONDITION,0);
 
-        //Initializing NavigationView
-        navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navHeaderLayout = navigationView.getHeaderView(0);
 
-        //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
-            // This method will trigger on item Click of navigation menu
+        mRecyclerView = (RecyclerView) findViewById(R.id.navigation_view); // Assigning the RecyclerView Object to the xml View
+
+        mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
+
+        mAdapter = new DrawerAdapter(MainActivity.this,TITLES);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        // And passing the titles,icons,header view name, header view email,
+        // and header view profile picture
+
+        mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
+
+        mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
+
+        mRecyclerView.setLayoutManager(mLayoutManager);                 // Setting the layout Manager
+
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);        // Drawer object Assigned to the view
+        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.drawer_open,R.string.drawer_close){
+
             @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-
-
-              //  getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                toolbar.setTitle(getString(R.string.app_name));
-
-                //Closing drawer on item click
-                mDrawerLayout.closeDrawers();
-                Fragment fragment;
-                //Check to see which item was being clicked and perform appropriate action
-                switch (menuItem.getItemId()) {
-                    //Replacing the main content with ContentFragment Which is our Inbox View;
-                    case R.id.risk_assessment:
-                        toolbar.setTitle(getString(R.string.app_name));
-                        return true;
-                    case R.id.about:
-                        fragment2 = new Fragment2();
-                        replaceFragment(fragment2, FRAGMENT2, false);
-                        return true;
-
-                    case R.id.disclaimer:
-
-                        return true;
-                    default:
-                        //Should never come here
-                        return true;
-
-                }
-            }
-        });
-
-//        navigationItems=getResources().getStringArray(R.array.navigation_items);
-//        NavigationDrawerAdapter navigationAdapter=new NavigationDrawerAdapter(this,navigationIconsArray,navigationStringsArray);
-//        mNavigationListview.setAdapter(navigationAdapter);
-
-
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                toolbar, R.string.drawer_open, R.string.drawer_close) {
-
-            /** Called when a drawer has settled in a completely closed state. */
-            public void onDrawerClosed(View view) {
-                super.onDrawerClosed(view);
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-            }
-
-            /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+                // code here will execute once the drawer is opened( As I dont want anything happened whe drawer is
+                // open I am not going to put anything here)
             }
 
-        };
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                // Code here will execute once drawer is closed
+            }
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Set the drawer toggle as the DrawerListener
 
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerToggle.syncState();
+        }; // Drawer Toggle Object Made
+        mDrawerLayout.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
+        mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
 
-        addDefaultFragment();
+
+        if(which_fragment_to_open==1)
+        {addTermsConditionsFragment();}
+        else {
+            addDefaultFragment();
+        }
+
     }
 
 
+    private void addTermsConditionsFragment() {
+
+        TermsConditionsFragment termsConditionsFragment = (TermsConditionsFragment) getSupportFragmentManager().findFragmentByTag("TermsConditionsFragment");
+
+        if (termsConditionsFragment == null) {
+            termsConditionsFragment = new TermsConditionsFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.container, termsConditionsFragment, "TermsConditionsFragment").commit();
+        } else {
+            replaceFragment(termsConditionsFragment, "TermsConditionsFragment", false);
+        }
+
+    }
 
     private void addDefaultFragment() {
-
-
-
 
         patientInfo1Fragment = (PatientInfo1Fragment) getSupportFragmentManager().findFragmentByTag(PATIENT_INFO1_FRAGMENT);
 
@@ -131,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void replaceFragment(Fragment fragment, String tag, boolean addtoBackStack) {
+    public  void replaceFragment(Fragment fragment, String tag, boolean addtoBackStack) {
         if (addtoBackStack) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment, tag).addToBackStack(null).commit();
 //            toolbarNAvigationListener();
@@ -143,9 +139,53 @@ public class MainActivity extends AppCompatActivity {
     public void setToolBarTitle(String toolBarTitle) {
         if (toolbar != null) {
 //        toolbar.setTitle(toolBarTitle);
+
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle(toolBarTitle);
             Log.i(TAG, "Toolbar was set");
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+       // mDrawerLayout.closeDrawers();
+    }
+
+    @Override
+    public void OnFragmentClick(int position) {
+        switch(position)
+        {
+            case 1:
+                mDrawerLayout.closeDrawers();
+                TermsConditionsFragment termsConditionsFragment = (TermsConditionsFragment) getSupportFragmentManager().findFragmentByTag("termsConditionsFragment");
+                if (termsConditionsFragment == null) {
+                    termsConditionsFragment = new TermsConditionsFragment();
+                }
+                replaceFragment(termsConditionsFragment, "termsConditionsFragment", false);
+
+                break;
+            case 2:
+                mDrawerLayout.closeDrawers();
+
+                AboutusFragment aboutusFragment = (AboutusFragment) getSupportFragmentManager().findFragmentByTag("aboutusFragment");
+                if (aboutusFragment == null) {
+                    aboutusFragment = new AboutusFragment();
+                }
+                replaceFragment(aboutusFragment, "aboutusFragment", false);
+
+                break;
+            case 3:
+                mDrawerLayout.closeDrawers();
+                DisclaimerFragment disclaimerFragment = (DisclaimerFragment) getSupportFragmentManager().findFragmentByTag("disclaimerFragment");
+                if (disclaimerFragment == null) {
+                    disclaimerFragment = new DisclaimerFragment();
+                }
+                replaceFragment(disclaimerFragment, "disclaimerFragment", false);
+
+                break;
+        }
+    }
+
+
 }

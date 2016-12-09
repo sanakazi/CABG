@@ -30,17 +30,17 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
 
-                session = new Session(SplashActivity.this);
+              /*  session = new Session(SplashActivity.this);
                 if (session.isFirstTimeLaunch()) {
                     i = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(i);
                     finish();
                 }
-                else{
-                    i = new Intent(SplashActivity.this, MainActivity.class);
+                else{*/
+                    i = new Intent(SplashActivity.this, AppIntroActivity.class);
                     startActivity(i);
                     finish();
-                }
+              //  }
 
             }
         }, SPLASH_TIME_OUT);

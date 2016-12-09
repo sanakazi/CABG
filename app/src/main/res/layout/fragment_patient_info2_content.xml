@@ -6,6 +6,182 @@
 
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_corners_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/blue_edward"
+                android:textStyle="bold"
+                android:text="@string/gradient"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/range1"
+                    android:transitionName="range1animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:inputType="number"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"/>
+
+
+                <TextView
+                    android:background="@android:color/transparent"
+                    android:id="@+id/et_gradient_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:hint="@string/gradient_unit"
+                    android:textSize="15sp"
+                    android:padding="5dp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:minWidth="1dp"
+                    android:background="@color/progress_gray"
+                    android:layout_below="@+id/range1"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:textColor="@color/blue_edward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/valve_area"
+                android:textStyle="bold"
+                android:paddingTop="20dp"
+                android:textSize="15sp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:padding="5dp"
+                    android:id="@+id/range2"
+                    android:transitionName="range2animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:id="@+id/et_valve_area_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="cm²"
+                    android:textSize="15sp"
+                    android:padding="5dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:minWidth="1dp"
+                    android:background="@color/progress_gray"
+                    android:layout_below="@+id/range2"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:textSize="15sp"
+                android:textColor="@color/blue_edward"
+                android:textStyle="bold"
+                android:text="@string/jet_velocity"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:textColor="@color/blue_edward"
+                    android:padding="5dp"
+                    android:id="@+id/range3"
+                    android:transitionName="range3animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:background="@android:color/transparent"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/et_jet_velocity_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/jet_velocity_unit"
+                    android:textSize="15sp"
+
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:minWidth="1dp"
+                    android:background="@color/progress_gray"
+                    android:layout_below="@+id/range3"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -22,8 +198,9 @@
                     android:paddingLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="@color/blue_edward"
+                    android:textStyle="bold"
                     android:text="@string/gradient"/>
 
                 <RelativeLayout
@@ -31,12 +208,13 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/et_gradient"
+                        android:id="@+id/range1"
+                        android:transitionName="range1animation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="min 50  max 200"
+                        android:hint="min 00  max 200"
                         android:textSize="15sp"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         android:background="@android:color/transparent"
                         android:padding="5dp"/>
 
@@ -57,7 +235,7 @@
                         android:layout_height="1dp"
                         android:minWidth="1dp"
                         android:background="@color/progress_gray"
-                        android:layout_below="@+id/et_gradient"/>
+                        android:layout_below="@+id/range1"/>
 
                 </RelativeLayout>
 
@@ -67,8 +245,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/valve_area"
+                    android:textStyle="bold"
                     android:paddingTop="20dp"
-                    android:textSize="20sp"/>
+                    android:textSize="15sp"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -76,12 +255,13 @@
 
                     <EditText
                         android:padding="5dp"
-                        android:id="@+id/et_valve_area"
+                        android:id="@+id/range2"
+                        android:transitionName="range2animation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="from -2.5  max 2.6"
                         android:background="@android:color/transparent"
-                        android:inputType="numberDecimal"
+                        android:inputType="numberSigned|numberDecimal"
                         android:textSize="15sp"
                         />
                     <TextView
@@ -89,7 +269,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:text="@string/valve_area_unit"
+                        android:text="cm²"
                         android:textSize="15sp"
                         android:padding="5dp"/>
 
@@ -98,7 +278,7 @@
                         android:layout_height="1dp"
                         android:minWidth="1dp"
                         android:background="@color/progress_gray"
-                        android:layout_below="@+id/et_valve_area"/>
+                        android:layout_below="@+id/range2"/>
 
                 </RelativeLayout>
 
@@ -107,8 +287,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="@color/blue_edward"
+                    android:textStyle="bold"
                     android:text="@string/jet_velocity"/>
 
 
@@ -119,7 +300,8 @@
                     <EditText
                         android:textColor="@color/blue_edward"
                         android:padding="5dp"
-                        android:id="@+id/et_jet_velocity"
+                        android:id="@+id/range3"
+                        android:transitionName="range3animation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="min 2.0  max 11.2"
@@ -142,7 +324,7 @@
                         android:layout_height="1dp"
                         android:minWidth="1dp"
                         android:background="@color/progress_gray"
-                        android:layout_below="@+id/et_jet_velocity"/>
+                        android:layout_below="@+id/range3"/>
 
                 </RelativeLayout>
 
@@ -154,4 +336,4 @@
 
 
 
-</LinearLayout>
+</LinearLayout>-->

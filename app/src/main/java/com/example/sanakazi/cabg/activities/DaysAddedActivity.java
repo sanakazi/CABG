@@ -1,11 +1,14 @@
 package com.example.sanakazi.cabg.activities;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -77,6 +80,9 @@ public class DaysAddedActivity extends AppCompatActivity {
                 intent.putExtra("new_gradient" ,new_grad);
                 intent.putExtra("new_valve_area" ,new_jet_vel);
                 intent.putExtra("new_jet_velocity" ,new_val_area);
+
+                intent.putExtra("daysAdded" ,daysAddedValue);
+
                 startActivity(intent);
             }
         });
@@ -84,27 +90,58 @@ public class DaysAddedActivity extends AppCompatActivity {
 
     private void calculateDays()
     {
-      if(age>70)
+      /*if(age>70)
       {
           daysAddedValue=105;
           Log.w(TAG,"CASE 1");
+         // txt_days_added.setText(String.valueOf(daysAddedValue));
+          startCountAnimation(daysAddedValue);
       }
-        else if(age<50)
+        else if(gradient_value<25)
       {
           daysAddedValue=105;
           Log.w(TAG,"CASE 2");
+          startCountAnimation(daysAddedValue);
+         // txt_days_added.setText(String.valueOf(daysAddedValue));
       }
       else if(gradient_value>50)
       {
           daysAddedValue=105;
           Log.w(TAG,"CASE 3");
+          startCountAnimation(daysAddedValue);
+         // txt_days_added.setText(String.valueOf(daysAddedValue));
       }
         else if(age>=50 && age <=70 && gradient_value<=50)
       {
           Log.w(TAG,"CASE 4");
           databaseEvents();
-      }
+      }*/
 
+
+        if(gradient_value > 50)
+        {
+            daysAddedValue=105;
+            startCountAnimation(daysAddedValue);
+        }
+        else if(age > 70)
+        {
+            daysAddedValue=105;
+            startCountAnimation(daysAddedValue);
+        }
+        else if(gradient_value >= 25 && gradient_value <= 50)
+        {
+            databaseEvents();
+        }
+        else if(gradient_value < 25)
+        {
+          if(age > 50){
+              daysAddedValue=105;
+            startCountAnimation(daysAddedValue);
+        }
+    }
+    else
+        {
+            daysAddedValue=105;startCountAnimation(daysAddedValue);}
 
     }
 
@@ -116,8 +153,13 @@ public class DaysAddedActivity extends AppCompatActivity {
 
         obj_myDb = myDb.getDaysAdded(String.valueOf(gradient_value));
         Log.w(TAG,"days added are "+ obj_myDb.getDaysAdded()) ;
-        daysAddedValue=Integer.parseInt(obj_myDb.getDaysAdded());
-        txt_days_added.setText(String.valueOf(daysAddedValue));
+        if(obj_myDb.getDaysAdded().isEmpty())
+        {daysAddedValue=105;}
+        else {
+            daysAddedValue = Integer.parseInt(obj_myDb.getDaysAdded());
+        }
+
+        startCountAnimation(daysAddedValue);
 
     }
 
@@ -132,4 +174,17 @@ public class DaysAddedActivity extends AppCompatActivity {
         }
 
     }
+
+    private void startCountAnimation(int max) {
+        ValueAnimator animator = new ValueAnimator();
+        animator.setObjectValues(0, max);
+        animator.setDuration(1000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                txt_days_added.setText("" + (int) animation.getAnimatedValue());
+            }
+        });
+        animator.start();
+    }
+
 }

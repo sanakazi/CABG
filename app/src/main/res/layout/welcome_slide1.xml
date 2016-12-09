@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/splash1">
+    android:orientation="vertical"
+    >
 
 
-</RelativeLayout>
+    <ImageView
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/sp1"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Single or Dual"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Surgery"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25sp"/>
+
+
+</LinearLayout>

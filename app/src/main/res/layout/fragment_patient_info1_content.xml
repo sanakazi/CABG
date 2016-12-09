@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+    xmlns:rsb="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,12 +11,13 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:weightSum="3">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:id="@+id/ll1"
-                    android:layout_weight="0.2"
+                    android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp">
 
@@ -24,15 +26,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <FrameLayout
-                            android:id="@+id/seekArcContainer1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            >
+
                             <TextView
                                 android:id="@+id/txt1"
-                                android:layout_marginLeft="10dp"
-                                android:text="@string/age"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="15dp"
+                                android:textColor="@color/blue_edward"
+                                android:text="Patient's Age"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
@@ -42,39 +42,116 @@
 
                                 android:id="@+id/seekArc1"
                                 android:layout_width="160dp"
-                                android:layout_height="120dp"
-                                android:layout_gravity="center"
+                                android:layout_height="150dp"
+                                android:layout_centerHorizontal="true"
                                 android:paddingTop="30dp"
                                 android:paddingLeft="30dp"
                                 android:paddingRight="30dp"
                                 android:paddingBottom="10dp"
+                                android:layout_marginTop="10dp"
                                 seekarc:rotation="180"
                                 seekarc:startAngle="90"
                                 seekarc:sweepAngle="180"
                                 seekarc:touchInside="true"
-                                seekarc:max="70"
-                                seekarc:arcColor="@color/dark_red"
-                                seekarc:progressColor="@color/red"
+                                seekarc:max="30"
+                                seekarc:arcWidth="3dp"
+                                seekarc:arcColor="@color/severe"
+                                seekarc:progressColor="@color/severe"
 
                                 />
 
 
                             <TextView
-                                android:id="@+id/seekArcProgress1"
+                                android:id="@+id/seekArcProgress_years"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="0"
-                                android:textSize="15sp" />
+                                android:layout_below="@+id/seekArcProgress1"
+                                android:layout_centerHorizontal="true"
+                                android:text="Years"
+                                android:gravity="center"
+                                android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/seekArcProgress1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="40dp"
+                            android:text="50"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+
+                        <TextView
+
+                            android:background="@android:color/transparent"
+                            android:id="@+id/min_age_years"
+                            android:layout_below="@+id/seekArcProgress_years"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@+id/seekArcProgress_years"
+                            android:layout_marginRight="40dp"
+                            android:layout_marginTop="5dp"
+                            android:text="years"
+                            android:gravity="center"
+                            android:textSize="12sp" />
+
+
+                        <EditText
+
+                            android:background="@android:color/transparent"
+                            android:id="@+id/min_age"
+                            android:layout_below="@+id/seekArcProgress_years"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/min_age_years"
+                            android:layout_marginTop="5dp"
+                            android:hint="50"
+                            android:paddingRight="5dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:editable="false"/>
+
+
+                        <EditText
+
+                            android:id="@+id/max_age"
+                            android:background="@android:color/transparent"
+                            android:layout_below="@+id/seekArcProgress_years"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/seekArcProgress_years"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="80"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:editable="false"/>
+
+                        <TextView
+
+                            android:id="@+id/max_age_years"
+                            android:background="@android:color/transparent"
+                            android:layout_below="@+id/seekArcProgress_years"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                             android:paddingLeft="5dp"
+                            android:layout_toRightOf="@+id/max_age"
+                            android:layout_marginTop="5dp"
+                            android:hint="years"
+                            android:gravity="center"
+                            android:textSize="12sp" />
+
+
 
                             <View
-                                android:layout_below="@+id/seekArcContainer1"
+                                android:id="@+id/view1"
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:minHeight="1dp"
-                                android:background="#000000"
-                                android:layout_gravity="bottom"/>
-                        </FrameLayout>
+                                android:background="@color/app_grey"
+                                android:layout_alignParentBottom="true"/>
+
 
 
 
@@ -83,54 +160,126 @@
 
 
                 </LinearLayout>
+
+
                 <LinearLayout
                     android:id="@+id/ll2"
                     android:orientation="vertical"
-                    android:layout_weight="0.2"
+                    android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
-
-
-                        <FrameLayout
-                            android:id="@+id/seekArcContainer2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            >
 
                             <TextView
                                 android:id="@+id/txt2"
-                                android:layout_marginLeft="10dp"
+                                android:textColor="@color/blue_edward"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="15dp"
                                 android:text="@string/blood_pressure"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
-                            <com.triggertrap.seekarc.SeekArc
+                            <LinearLayout
+                                android:id="@+id/l2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                             android:layout_below="@+id/txt2"
+                                android:layout_marginTop="10dp"
+                                android:weightSum="4">
 
-                                android:id="@+id/seekArc2"
-                                android:layout_width="200dp"
-                                android:layout_height="120dp"
-                                android:layout_gravity="center"
-                                android:paddingTop="30dp"
-                                android:paddingLeft="30dp"
-                                android:paddingRight="30dp"
-                                android:paddingBottom="10dp"
-                                seekarc:rotation="180"
-                                seekarc:startAngle="90"
-                                seekarc:sweepAngle="180"
-                                seekarc:touchInside="true"
-                                seekarc:max="70"
-                                seekarc:arcColor="@color/dark_red"
-                                seekarc:progressColor="@color/red"
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"/>
 
-                                />
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:textSize="12sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Diastollic"/>
+
+                                    <TextView
+                                        android:id="@+id/min_bp"
+                                        android:textSize="20sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="40"/>
+
+                                </LinearLayout>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/app_grey"/>
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:textSize="12sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Systolic"/>
+                                    <TextView
+                                        android:id="@+id/max_bp"
+                                        android:textSize="20sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="240"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <com.example.sanakazi.cabg.custom.RangeSeekBar
+                                android:id="@+id/rangebar2"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@+id/l2"
+                                android:layout_marginTop="10dp"
+                                rsb:absoluteMaxValue="150"
+                                rsb:absoluteMinValue="20" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="40 mmHg"
+                            android:layout_toLeftOf="@+id/rangebar2"
+
+                            android:paddingRight="3dp"
+                            android:layout_alignTop="@+id/rangebar2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="240 mmHg"
+                            android:layout_toRightOf="@+id/rangebar2"
+                           android:paddingLeft="3dp"
+                            android:layout_alignTop="@+id/rangebar2"/>
 
 
                             <TextView
+                                android:visibility="invisible"
                                 android:id="@+id/seekArcProgress2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -144,20 +293,19 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:minHeight="1dp"
-                                android:background="#000000"
-                                android:layout_gravity="bottom"/>
-                        </FrameLayout>
-
-
+                                android:background="@color/app_grey"
+                                android:layout_alignParentBottom="true"/>
 
 
                     </RelativeLayout>
 
                 </LinearLayout>
+
+
                 <LinearLayout
                     android:orientation="vertical"
                     android:id="@+id/ll3"
-                    android:layout_weight="0.1"
+                    android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp">
 
@@ -166,12 +314,15 @@
                         android:layout_height="wrap_content">
                         <TextView
                             android:id="@+id/txt3"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="@color/blue_edward"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
                             android:text="@string/nyha_class"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
-                        <LinearLayout
+                       <!-- <LinearLayout
                             android:layout_marginLeft="10dp"
                             android:id="@+id/cb_layout"
                             android:layout_below="@+id/txt3"
@@ -181,42 +332,115 @@
                             android:orientation="horizontal">
 
                             <CheckBox
+                                android:layout_margin="5dp"
                                 android:id="@+id/cb1"
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:checked="false"
-                                android:text=" Class I"/>
+                                android:text=" Class I"
+                                android:button="@drawable/checkbox_selector"
+                                />
 
                             <CheckBox
+                                android:layout_margin="5dp"
                                 android:id="@+id/cb2"
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text=" Class I"/>
+                                android:text=" Class II"
+                                android:button="@drawable/checkbox_selector"/>
 
                             <CheckBox
+                                android:layout_margin="5dp"
                                 android:id="@+id/cb3"
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:button="@drawable/checkbox_selector"
 
                                 android:checked="false"
-                                android:text=" Class I"/>
+                                android:text=" Class III"/>
 
                         </LinearLayout>
 
 
 
                         <CheckBox
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="15dp"
                             android:id="@+id/cb4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/cb_layout"
                             android:checked="false"
-                            android:text=" Class I"/>
+                            android:text=" Class IV"
+                            android:button="@drawable/checkbox_selector"/>-->
 
+
+
+
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/cb_layout1"
+                            android:layout_below="@+id/txt3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <CheckBox
+                                android:layout_margin="5dp"
+                                android:id="@+id/cb1"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text=" Class I"
+                                android:button="@drawable/checkbox_selector"
+                                />
+
+                            <CheckBox
+                                android:layout_margin="5dp"
+                                android:id="@+id/cb2"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=" Class II"
+                                android:button="@drawable/checkbox_selector"/>
+
+                            </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/cb_layout2"
+                            android:layout_below="@+id/cb_layout1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <CheckBox
+                                android:layout_margin="5dp"
+                                android:id="@+id/cb3"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text=" Class III"
+                                android:button="@drawable/checkbox_selector"
+                                />
+
+                            <CheckBox
+                                android:layout_margin="5dp"
+                                android:id="@+id/cb4"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=" Class IV"
+                                android:button="@drawable/checkbox_selector"/>
+
+                        </LinearLayout>
 
 
 

@@ -21,7 +21,7 @@
             android:background="@drawable/rounded_corners_white">
 
             <LinearLayout
-              android:layout_weight="0.15"
+              android:layout_weight="0.2"
                 android:layout_height="0dp"
                 android:layout_width="match_parent"
                 android:padding="5dp"
@@ -43,6 +43,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Current Age"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
                         android:textSize="12sp"/>
                     <TextView
                         android:id="@+id/txt_age"
@@ -51,11 +53,15 @@
                         android:layout_height="wrap_content"
                         android:text="67"
                         android:textColor="@color/blue_edward"
-                        android:textSize="20sp"/>
+                        android:textSize="45sp"/>
 
 
                 </LinearLayout>
-
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/progress_gray"
+                    android:layout_margin="5dp"/>
 
                 <LinearLayout
                     android:layout_weight="0.5"
@@ -69,6 +75,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Chosen Age"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
                         android:textSize="12sp"/>
                     <TextView
                         android:id="@+id/txt_newage"
@@ -77,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:text="75"
                         android:textColor="@color/blue_edward"
-                        android:textSize="20sp"/>
+                        android:textSize="45sp"/>
 
                 </LinearLayout>
 
@@ -117,10 +125,10 @@
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
             android:background="@color/blue_edward"
-            android:text="VIEW NO. OF DAYS ADDED"
+            android:text="View No. Of Days Added"
             android:layout_alignParentBottom="true"
             android:textColor="@color/white"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textSize="15sp"
             />
     </LinearLayout>

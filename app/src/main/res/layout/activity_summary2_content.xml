@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="6">
+
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:textStyle="bold"
+            android:textColor="@color/blue_edward"
+
+            android:gravity="center"
+            android:layout_weight="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Age"
+            android:textSize="12sp"/>
+        <LinearLayout
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+          <LinearLayout
+              android:layout_weight="0.5"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:orientation="horizontal"
+              android:gravity="center">
+
+              <ImageView
+                  android:layout_width="20dp"
+                  android:layout_height="20dp"
+                  android:layout_marginRight="5dp"
+                  android:src="@mipmap/age_r"
+                  android:layout_gravity="center"/>
+
+              <TextView
+                  android:id="@+id/age_current"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="20sp"
+                  android:text="67"
+                  android:layout_gravity="center"/>
+
+          </LinearLayout>
+
+            <View
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"/>
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/age_b"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/age_future"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="67"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:textStyle="bold"
+            android:textColor="@color/blue_edward"
+
+            android:gravity="center"
+            android:layout_weight="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Gradient"
+            android:textSize="12sp"/>
+        <LinearLayout
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/grad_r"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/grad_cur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="67"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"/>
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/grad_b"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/grad_fut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="67"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:textStyle="bold"
+            android:textColor="@color/blue_edward"
+            android:gravity="center"
+            android:layout_weight="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Valve Area"
+            android:textSize="12sp"/>
+        <LinearLayout
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/valve_r"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/val_cur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="67"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"/>
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/valve_b"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/val_fut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="67"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:textStyle="bold"
+            android:textColor="@color/blue_edward"
+
+            android:gravity="center"
+            android:layout_weight="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Jet Velocity"
+            android:textSize="12sp"/>
+        <LinearLayout
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/jet_r"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/jet_cur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="67"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/progress_gray"/>
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/jet_b"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/jet_fut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="67"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+               >
+
+                <TextView
+                    android:id="@+id/severe_age"
+                    android:textColor="@color/severe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="x years"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="For the patient`s condition to become very severe"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+               >
+
+                <TextView
+                    android:id="@+id/days_added"
+                    android:textColor="@color/voilet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="x days"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Of additional life expectancy likely by performing AVR with CABG"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"/>
+
+
+            </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

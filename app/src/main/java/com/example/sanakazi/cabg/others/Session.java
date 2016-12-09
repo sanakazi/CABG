@@ -18,6 +18,7 @@ public class Session {
 
     // Shared preferences file name
     private static final String PREF_NAME = "cabg_app";
+    public static int coach_marks =0;
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
 
