@@ -62,11 +62,11 @@ public class PatientInfo2Activity extends AppCompatActivity {
 
 
                     if (grad < 0 || grad > 200) {
-                        Toast.makeText(PatientInfo2Activity.this, "Please enter valid values for gradient", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PatientInfo2Activity.this, "Please enter valid values for Gradient", Toast.LENGTH_SHORT).show();
                     } else if (v_a < -2.5 || v_a > 2.6) {
-                        Toast.makeText(PatientInfo2Activity.this, "Please enter valid values for valve area", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PatientInfo2Activity.this, "Please enter valid values for Valve Area", Toast.LENGTH_SHORT).show();
                     } else if (j_v < 2.0 || j_v > 11.3) {
-                        Toast.makeText(PatientInfo2Activity.this, "Please enter valid values for jet velocity", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PatientInfo2Activity.this, "Please enter valid values for Jet Velocity", Toast.LENGTH_SHORT).show();
                     } else {
 
                         Intent intent = new Intent(PatientInfo2Activity.this, PatientSeverityActivity.class);

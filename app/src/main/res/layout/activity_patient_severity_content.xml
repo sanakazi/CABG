@@ -32,6 +32,8 @@
       app:wheelItemTransformer="com.lukedeighton.wheelview.transformer.SimpleItemTransformer"-->
 
 
+
+
     <LinearLayout
         android:orientation="vertical"
         android:background="@color/white"
@@ -196,7 +198,7 @@
                     android:layout_width="7dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
-                    android:background="@color/green_a200"/>
+                    android:background="@color/mild"/>
 
                 <LinearLayout
                     android:layout_toLeftOf="@+id/l3"
@@ -211,7 +213,7 @@
                         android:layout_width="match_parent"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/green_a200"
+                        android:textColor="@color/mild"
                         android:textStyle="bold"
                         android:textSize="15sp"
                         android:paddingBottom="5dp"
@@ -232,7 +234,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:gravity="center"
-                        android:text=" Aortic Jet Velocity m/sec"
+                        android:text="Jet Velocity m/sec"
                         android:textColor="@color/black"
                         android:textSize="15sp"/>
 
@@ -251,6 +253,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/arrow"/>
+
+    <TextView
+        android:id="@+id/yrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Years"
+        android:textSize="12sp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/wheelview"
+        android:layout_marginLeft="80dp"
+        android:gravity="center|bottom"
+        android:textColor="@color/blue_edward"
+        />
+<!--     <TextView
+         android:id="@+id/yrs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Years"
+            android:textSize="12sp"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />-->
 
 
 

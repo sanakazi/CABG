@@ -52,6 +52,10 @@
         "source": "D:\\Sana Kazi\\MyAndroidWorkspaceR&D\\CABG\\SeekArc_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_btn_rating_star_off_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\Sana Kazi\\MyAndroidWorkspaceR&D\\CABG\\SeekArc_library\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\circle.png",
+        "source": "D:\\Sana Kazi\\MyAndroidWorkspaceR&D\\CABG\\SeekArc_library\\res\\drawable-mdpi\\circle.png"
+    },
+    {
         "merged": "D:\\Sana Kazi\\MyAndroidWorkspaceR&D\\CABG\\SeekArc_library\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "D:\\Sana Kazi\\MyAndroidWorkspaceR&D\\CABG\\SeekArc_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },

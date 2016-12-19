@@ -37,7 +37,9 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 }
                 else{*/
-                    i = new Intent(SplashActivity.this, AppIntroActivity.class);
+                  //  i = new Intent(SplashActivity.this, AppIntroActivity.class);
+                i = new Intent(SplashActivity.this, AppVideoActivity.class);
+
                     startActivity(i);
                     finish();
               //  }

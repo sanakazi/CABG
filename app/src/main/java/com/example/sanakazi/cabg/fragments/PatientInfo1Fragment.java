@@ -55,7 +55,7 @@ public class PatientInfo1Fragment extends Fragment{
     @Bind(R.id.min_age) EditText min_age;   @Bind(R.id.max_age) EditText max_age;
     @Bind(R.id.main_layout) LinearLayout main_layout;
     PatientInfo2Fragment patientInfo2Fragment;
-    static int  age=55;
+    static int  age=50;
     static int count=55;
     static int minimun_age=50;
     static int maximum_age=80;

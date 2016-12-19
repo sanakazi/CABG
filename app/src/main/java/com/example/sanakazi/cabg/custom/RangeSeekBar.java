@@ -68,11 +68,11 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     private static final int INITIAL_PADDING_IN_DP = 3;
     private final int LINE_HEIGHT_IN_DP = 3;
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Bitmap thumbImage = BitmapFactory.decodeResource(getResources(), R.mipmap.circle2);
+    private final Bitmap thumbImage = BitmapFactory.decodeResource(getResources(), R.mipmap.circle_pink);
     private final Bitmap thumbPressedImage = BitmapFactory.decodeResource(getResources(),
-            R.mipmap.circle2);
+            R.mipmap.circle_pink);
     private final Bitmap thumbDisabledImage = BitmapFactory.decodeResource(getResources(),
-            R.mipmap.circle2);
+            R.mipmap.circle_pink);
     private final float thumbWidth = thumbImage.getWidth();
     private final float thumbHalfWidth = 0.5f * thumbWidth;
     private final float thumbHalfHeight = 0.5f * thumbImage.getHeight();

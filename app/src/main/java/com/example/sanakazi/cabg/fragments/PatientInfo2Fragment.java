@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
  * Created by sanakazi on 11/30/2016.
  */
 public class PatientInfo2Fragment extends Fragment {
-    @Bind(R.id.btn_next)
+  /*  @Bind(R.id.btn_next)
     Button btn_next;
     @Bind(R.id.range1) EditText range1;
     @Bind(R.id.range2) EditText range2;
@@ -70,11 +70,11 @@ public class PatientInfo2Fragment extends Fragment {
 
 
                     if (grad < 0 || grad > 200) {
-                        Toast.makeText(getActivity(), "Please enter valid values for gradient", Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getActivity(), getResources().getString(R.string.gradient_error), Toast.LENGTH_SHORT).show();
                     } else if (v_a < -2.5 || v_a > 2.6) {
-                        Toast.makeText(getActivity(), "Please enter valid values for valve area", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Please enter valid values for Valve Area", Toast.LENGTH_SHORT).show();
                     } else if (j_v < 2.0 || j_v > 11.3) {
-                        Toast.makeText(getActivity(), "Please enter valid values for jet velocity", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Please enter valid values for Jet Velocity", Toast.LENGTH_SHORT).show();
                     } else {
 
                         Intent intent = new Intent(getActivity(), PatientSeverityActivity.class);
@@ -88,5 +88,5 @@ public class PatientInfo2Fragment extends Fragment {
                 }
             }
         });
-    }
+    }*/
 }

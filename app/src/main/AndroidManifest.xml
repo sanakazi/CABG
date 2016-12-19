@@ -14,10 +14,11 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".activities.MainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activities.PatientSeverityActivity"
+            android:label=" "
             android:screenOrientation="portrait"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
             android:windowSoftInputMode="adjustPan" />
@@ -52,12 +53,15 @@
             android:label="@string/summary1_activity"
             android:screenOrientation="portrait"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".activities.PatientInfo2Activity"
-            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.PatientInfo2Activity"
             android:label="@string/patient_info"
+            android:screenOrientation="portrait"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activities.AppVideoActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
