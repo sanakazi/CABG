@@ -20,11 +20,11 @@
         app:selectionPadding="10dp"
         app:repeatItems="true"
         app:wheelRadius="200dp"
-        app:wheelItemCount="30"
+        app:wheelItemCount="31"
         app:wheelPadding="13dp"
         app:wheelItemRadius="21dp"
         app:wheelItemTransformer="com.lukedeighton.wheelview.transformer.SimpleItemTransformer"
-        app:wheelDrawable="@mipmap/dial1"
+        app:wheelDrawable="@mipmap/wheel_small"
 
         />
     <!--  app:wheelPosition="right"

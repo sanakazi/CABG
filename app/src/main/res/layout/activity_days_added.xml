@@ -13,58 +13,73 @@
 
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_margin="20dp"
             android:background="@drawable/rounded_corners_white"
-            android:gravity="center">
+            >
+
 
             <LinearLayout
+              android:layout_centerInParent="true"
+                android:id="@+id/l1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_margin="5dp"
-                android:background="@mipmap/days_added_bg"
-                android:gravity="center">
-
-
-
-            <TextView
-                android:id="@+id/txt_days_added"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="0"
-                android:paddingBottom="5dp"
-                android:textColor="@color/blue_edward"
-                android:textStyle="bold"
-                android:textSize="40sp"/>
+              >
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:text="DAYS"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:paddingBottom="5dp"/>
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:id="@+id/txt_days_added"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/blue_edward"
+                    android:textStyle="bold"
+                    android:textSize="40sp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="could be added to patient`s life if AVR is performed with CABG"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                />
+                <TextView
+                    android:layout_below="@+id/txt_days_added"
+                    android:id="@+id/txt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:text="DAYS"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:paddingBottom="5dp"/>
+
+                <TextView
+                    android:layout_below="@+id/txt2"
+                    android:id="@+id/txt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="could be added to patient`s life if AVR is performed with CABG"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
 
             </LinearLayout>
 
-        </LinearLayout>
+
+            <ImageView
+               android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ecg"/>
+
+
+
+        </RelativeLayout>
 
 
     </FrameLayout>

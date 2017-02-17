@@ -176,16 +176,16 @@ public class Summary2Activity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-                Log.v(TAG,"Permission is granted");
+                Log.w(TAG,"Permission is granted");
                 saveBitmap(myBitmap);
             } else {
-
-                Log.v(TAG,"Permission is revoked");
+                Log.w(TAG,"Permission is revoked");
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-
+                saveBitmap(myBitmap);
             }
         }
-        else { //permission is automatically granted on sdk<23 upon installation
+        else {
+            //permission is automatically granted on sdk<23 upon installation
             saveBitmap(myBitmap);
         }
     }

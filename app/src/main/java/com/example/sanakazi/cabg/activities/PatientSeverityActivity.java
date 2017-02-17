@@ -165,7 +165,7 @@ public class PatientSeverityActivity extends AppCompatActivity {
         }, 3000); */
     }
 
-    static class MaterialColorAdapter extends WheelArrayAdapter<Map.Entry<String, Integer>> {
+    public class MaterialColorAdapter extends WheelArrayAdapter<Map.Entry<String, Integer>> {
         MaterialColorAdapter(List<Map.Entry<String, Integer>> entries) {
             super(entries);
         }
@@ -173,8 +173,8 @@ public class PatientSeverityActivity extends AppCompatActivity {
         @Override
         public Drawable getDrawable(int position) {
             Drawable[] drawable = new Drawable[] {
-                   createOvalDrawable(getItem(position).getValue()),
-                    new TextDrawable(String.valueOf(position+50))
+                //   createOvalDrawable(getItem(position).getValue()),
+                //    new TextDrawable(PatientSeverityActivity.this,String.valueOf(position+50))
             };
             return new LayerDrawable(drawable);
         }
